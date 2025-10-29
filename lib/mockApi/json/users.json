@@ -1,0 +1,26 @@
+[
+  {
+    "id": "u1",
+    "name": "John Smith",
+    "email": "john@example.com",
+    "role": "buyer",
+    "avatarUrl": "/placeholder.svg?height=40&width=40",
+    "createdAt": "2024-01-10T10:00:00.000Z"
+  },
+  {
+    "id": "u2",
+    "name": "Sarah Johnson",
+    "email": "sarah@example.com",
+    "role": "seller",
+    "avatarUrl": "/placeholder.svg?height=40&width=40",
+    "createdAt": "2024-02-15T12:00:00.000Z"
+  },
+  {
+    "id": "u3",
+    "name": "Mike Chen",
+    "email": "mike@example.com",
+    "role": "both",
+    "avatarUrl": "/placeholder.svg?height=40&width=40",
+    "createdAt": "2024-03-20T15:30:00.000Z"
+  }
+]

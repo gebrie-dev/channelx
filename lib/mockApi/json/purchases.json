@@ -1,0 +1,13 @@
+[
+  {
+    "id": "p1",
+    "channelId": "c1",
+    "buyerId": "u1",
+    "sellerId": "u2",
+    "price": 5400,
+    "status": "completed",
+    "receiptId": "RCP-20240501-001",
+    "createdAt": "2024-05-01T12:00:00.000Z",
+    "updatedAt": "2024-05-05T12:00:00.000Z"
+  }
+]

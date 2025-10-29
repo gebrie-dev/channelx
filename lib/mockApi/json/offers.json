@@ -1,0 +1,22 @@
+[
+  {
+    "id": "o1",
+    "channelId": "c1",
+    "buyerId": "u1",
+    "amount": 5300,
+    "message": "Serious buyer, can close fast.",
+    "status": "pending",
+    "createdAt": "2024-05-01T10:00:00.000Z",
+    "updatedAt": "2024-05-01T10:00:00.000Z"
+  },
+  {
+    "id": "o2",
+    "channelId": "c3",
+    "buyerId": "u1",
+    "amount": 7600,
+    "message": "Counter possible.",
+    "status": "rejected",
+    "createdAt": "2024-06-10T09:00:00.000Z",
+    "updatedAt": "2024-06-12T09:00:00.000Z"
+  }
+]
