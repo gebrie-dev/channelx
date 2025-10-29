@@ -18,21 +18,21 @@ export default function HomePage() {
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-background/80" />
         </div>
         <div className="relative px-4">
-          <div className="container mx-auto py-28 text-center">
+          <div className="container mx-auto py-20 md:py-24 text-center">
             <div className="inline-flex items-center rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs text-white/90 backdrop-blur">
               🚀 Secure Social Media Asset Trading
             </div>
-            <h1 className="mt-5 text-4xl md:text-6xl font-extrabold tracking-tight text-white">
+            <h1 className="mt-4 text-4xl md:text-5xl font-extrabold tracking-tight text-white">
               Buy & Sell
               <span className="ml-2 inline-block bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent">
                 Social Media Accounts
               </span>
             </h1>
-            <p className="mx-auto mt-5 max-w-2xl text-lg md:text-xl text-white/80">
+            <p className="mx-auto mt-4 max-w-2xl text-base md:text-lg text-white/80">
               The most secure marketplace for trading YouTube channels, Instagram accounts, TikTok profiles, and Telegram
               channels with escrow protection and verified ownership.
             </p>
-            <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="mt-6 flex flex-col sm:flex-row gap-3 justify-center">
               <Link href="/auth/signup">
                 <Button
                   size="lg"
@@ -57,15 +57,17 @@ export default function HomePage() {
           <h2 className="text-3xl font-bold text-center mb-12">Supported Platforms</h2>
           <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
             {[
-              { name: "YouTube", icon: "🎥", color: "bg-red-100 text-red-800" },
-              { name: "Instagram", icon: "📸", color: "bg-pink-100 text-pink-800" },
-              { name: "TikTok", icon: "🎵", color: "bg-teal-100 text-teal-800" },
-              { name: "Twitter/X", icon: "🐦", color: "bg-emerald-100 text-emerald-800" },
-              { name: "Telegram", icon: "✈️", color: "bg-cyan-100 text-cyan-800" },
+              { name: "YouTube", iconSrc: "https://cdn.simpleicons.org/youtube/ff0000", color: "bg-red-100 text-red-800" },
+              { name: "Instagram", iconSrc: "https://cdn.simpleicons.org/instagram/E4405F", color: "bg-pink-100 text-pink-800" },
+              { name: "TikTok", iconSrc: "https://cdn.simpleicons.org/tiktok/000000", color: "bg-teal-100 text-teal-800" },
+              { name: "Twitter/X", iconSrc: "https://cdn.simpleicons.org/x/111827", color: "bg-emerald-100 text-emerald-800" },
+              { name: "Telegram", iconSrc: "https://cdn.simpleicons.org/telegram/229ED9", color: "bg-cyan-100 text-cyan-800" },
             ].map((platform) => (
               <Card key={platform.name} className="text-center hover:shadow-lg transition-shadow">
                 <CardContent className="p-6">
-                  <div className="text-4xl mb-3">{platform.icon}</div>
+                  <div className="mb-3 flex items-center justify-center">
+                    <img src={platform.iconSrc} alt={`${platform.name} icon`} className="h-9 w-9" />
+                  </div>
                   <Badge className={platform.color}>{platform.name}</Badge>
                 </CardContent>
               </Card>
@@ -165,27 +167,27 @@ export default function HomePage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-4 bg-gradient-to-r from-emerald-600 to-teal-600 text-white">
-        <div className="container mx-auto text-center">
-          <h2 className="text-4xl font-bold mb-6">Ready to Start Trading?</h2>
-          <p className="text-xl mb-8 opacity-90">
-            Join thousands of users who trust ChannelX for secure social media account trading.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/auth/signup">
-              <Button size="lg" variant="secondary">
-                Create Account
-              </Button>
-            </Link>
-            <Link href="/marketplace">
-              <Button
-                size="lg"
-                variant="outline"
-                className="text-white border-white hover:bg-white hover:text-blue-600 bg-transparent"
-              >
-                Explore Marketplace
-              </Button>
-            </Link>
+      <section className="py-20 px-4">
+        <div className="container mx-auto">
+          <div className="mx-auto max-w-5xl rounded-2xl bg-gradient-to-r from-emerald-600 to-teal-600 p-10 md:p-14 text-white shadow-2xl">
+            <div className="text-center">
+              <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4">Ready to Start Trading?</h2>
+              <p className="text-lg md:text-xl opacity-90 mb-8">
+                Join thousands of users who trust ChannelX for secure social media account trading.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Link href="/auth/signup">
+                  <Button size="lg" variant="secondary" className="text-emerald-700">
+                    Create Account
+                  </Button>
+                </Link>
+                <Link href="/marketplace">
+                  <Button size="lg" variant="outline" className="text-white border-white/80 hover:bg-white hover:text-emerald-700">
+                    Explore Marketplace
+                  </Button>
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </section>

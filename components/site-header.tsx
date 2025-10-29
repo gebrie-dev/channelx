@@ -44,30 +44,32 @@ export function SiteHeader() {
               <NavigationMenu>
                 <NavigationMenuList>
                   <NavigationMenuItem>
-                    <NavigationMenuTrigger className="text-sm">Marketplace</NavigationMenuTrigger>
+                    <NavigationMenuTrigger aria-label="Open marketplace menu" className="text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50">
+                      Marketplace
+                    </NavigationMenuTrigger>
                     <NavigationMenuContent>
                       <div className="grid gap-2 p-4 md:w-[500px] lg:w-[700px] lg:grid-cols-3">
-                        <Link href="/marketplace" className="block rounded-md p-3 hover:bg-accent">
+                        <Link href="/marketplace" className="block rounded-md p-3 hover:bg-accent focus-visible:ring-2 ring-offset-2 ring-primary/50">
                           <div className="text-sm font-medium">Browse All</div>
                           <p className="text-xs text-muted-foreground">Explore all verified listings.</p>
                         </Link>
-                        <Link href={{ pathname: "/marketplace", query: { platform: "YouTube" } }} className="block rounded-md p-3 hover:bg-accent">
+                        <Link href={{ pathname: "/marketplace", query: { platform: "YouTube" } }} className="block rounded-md p-3 hover:bg-accent focus-visible:ring-2 ring-offset-2 ring-primary/50">
                           <div className="text-sm font-medium">YouTube</div>
                           <p className="text-xs text-muted-foreground">Channels with monetization and growth.</p>
                         </Link>
-                        <Link href={{ pathname: "/marketplace", query: { platform: "Instagram" } }} className="block rounded-md p-3 hover:bg-accent">
+                        <Link href={{ pathname: "/marketplace", query: { platform: "Instagram" } }} className="block rounded-md p-3 hover:bg-accent focus-visible:ring-2 ring-offset-2 ring-primary/50">
                           <div className="text-sm font-medium">Instagram</div>
                           <p className="text-xs text-muted-foreground">Niche and influencer accounts.</p>
                         </Link>
-                        <Link href={{ pathname: "/marketplace", query: { platform: "TikTok" } }} className="block rounded-md p-3 hover:bg-accent">
+                        <Link href={{ pathname: "/marketplace", query: { platform: "TikTok" } }} className="block rounded-md p-3 hover:bg-accent focus-visible:ring-2 ring-offset-2 ring-primary/50">
                           <div className="text-sm font-medium">TikTok</div>
                           <p className="text-xs text-muted-foreground">High engagement creators.</p>
                         </Link>
-                        <Link href={{ pathname: "/marketplace", query: { platform: "Twitter" } }} className="block rounded-md p-3 hover:bg-accent">
+                        <Link href={{ pathname: "/marketplace", query: { platform: "Twitter" } }} className="block rounded-md p-3 hover:bg-accent focus-visible:ring-2 ring-offset-2 ring-primary/50">
                           <div className="text-sm font-medium">Twitter/X</div>
                           <p className="text-xs text-muted-foreground">Communities and news feeds.</p>
                         </Link>
-                        <Link href={{ pathname: "/marketplace", query: { platform: "Telegram" } }} className="block rounded-md p-3 hover:bg-accent">
+                        <Link href={{ pathname: "/marketplace", query: { platform: "Telegram" } }} className="block rounded-md p-3 hover:bg-accent focus-visible:ring-2 ring-offset-2 ring-primary/50">
                           <div className="text-sm font-medium">Telegram</div>
                           <p className="text-xs text-muted-foreground">Groups and broadcast channels.</p>
                         </Link>
@@ -76,18 +78,18 @@ export function SiteHeader() {
                   </NavigationMenuItem>
 
                   <NavigationMenuItem>
-                    <NavigationMenuTrigger className="text-sm">Resources</NavigationMenuTrigger>
+                    <NavigationMenuTrigger aria-label="Open resources menu" className="text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50">Resources</NavigationMenuTrigger>
                     <NavigationMenuContent>
                       <div className="grid gap-2 p-4 md:w-[420px]">
-                        <Link href="#" className="block rounded-md p-3 hover:bg-accent">
+                        <Link href="#" className="block rounded-md p-3 hover:bg-accent focus-visible:ring-2 ring-offset-2 ring-primary/50">
                           <div className="text-sm font-medium">How it Works</div>
                           <p className="text-xs text-muted-foreground">Learn the buying & selling flow.</p>
                         </Link>
-                        <Link href="#" className="block rounded-md p-3 hover:bg-accent">
+                        <Link href="#" className="block rounded-md p-3 hover:bg-accent focus-visible:ring-2 ring-offset-2 ring-primary/50">
                           <div className="text-sm font-medium">Safety & Escrow</div>
                           <p className="text-xs text-muted-foreground">Understand our protection model.</p>
                         </Link>
-                        <Link href="#" className="block rounded-md p-3 hover:bg-accent">
+                        <Link href="#" className="block rounded-md p-3 hover:bg-accent focus-visible:ring-2 ring-offset-2 ring-primary/50">
                           <div className="text-sm font-medium">Valuation Guide</div>
                           <p className="text-xs text-muted-foreground">How to price social channels.</p>
                         </Link>
@@ -96,18 +98,18 @@ export function SiteHeader() {
                   </NavigationMenuItem>
 
                   <NavigationMenuItem>
-                    <NavigationMenuTrigger className="text-sm">Company</NavigationMenuTrigger>
+                    <NavigationMenuTrigger aria-label="Open company menu" className="text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50">Company</NavigationMenuTrigger>
                     <NavigationMenuContent>
                       <div className="grid gap-2 p-4 md:w-[380px]">
-                        <Link href="#" className="block rounded-md p-3 hover:bg-accent">
+                        <Link href="#" className="block rounded-md p-3 hover:bg-accent focus-visible:ring-2 ring-offset-2 ring-primary/50">
                           <div className="text-sm font-medium">About</div>
                           <p className="text-xs text-muted-foreground">Our mission and values.</p>
                         </Link>
-                        <Link href="#" className="block rounded-md p-3 hover:bg-accent">
+                        <Link href="#" className="block rounded-md p-3 hover:bg-accent focus-visible:ring-2 ring-offset-2 ring-primary/50">
                           <div className="text-sm font-medium">Contact</div>
                           <p className="text-xs text-muted-foreground">Get in touch with our team.</p>
                         </Link>
-                        <Link href="#" className="block rounded-md p-3 hover:bg-accent">
+                        <Link href="#" className="block rounded-md p-3 hover:bg-accent focus-visible:ring-2 ring-offset-2 ring-primary/50">
                           <div className="text-sm font-medium">Careers</div>
                           <p className="text-xs text-muted-foreground">Join us and build the future.</p>
                         </Link>
@@ -117,7 +119,7 @@ export function SiteHeader() {
                 </NavigationMenuList>
               </NavigationMenu>
 
-              <Link href="/pricing" className={pathname?.startsWith("/pricing") ? "text-sm font-medium" : "text-sm text-muted-foreground hover:text-foreground"}>
+              <Link href="/pricing" className={(pathname?.startsWith("/pricing") ? "text-foreground font-medium" : "text-muted-foreground hover:text-foreground") + " text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 rounded-md px-1"}>
                 Pricing
               </Link>
             </nav>
@@ -133,7 +135,7 @@ export function SiteHeader() {
             </Link>
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button variant="outline" size="icon" className="ml-1">
+                <Button aria-label="Open profile menu" variant="outline" size="icon" className="ml-1 focus-visible:ring-2 focus-visible:ring-primary/50">
                   <User className="w-4 h-4" />
                 </Button>
               </DropdownMenuTrigger>
@@ -153,7 +155,7 @@ export function SiteHeader() {
             <ThemeToggle />
             <Sheet>
               <SheetTrigger asChild>
-                <Button variant="outline" size="icon">
+                <Button aria-label="Open navigation menu" variant="outline" size="icon" className="focus-visible:ring-2 focus-visible:ring-primary/50">
                   <Menu className="w-4 h-4" />
                 </Button>
               </SheetTrigger>

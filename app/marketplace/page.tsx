@@ -1,6 +1,7 @@
 "use client"
 
 import { useEffect, useMemo, useState } from "react"
+import { useRouter, useSearchParams } from "next/navigation"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -16,6 +17,28 @@ export default function MarketplacePage() {
   const [selectedPlatform, setSelectedPlatform] = useState("all")
   const [sortBy, setSortBy] = useState("newest")
   const [searchText, setSearchText] = useState("")
+  const router = useRouter()
+  const params = useSearchParams()
+
+  // Initialize from URL on first load
+  useEffect(() => {
+    const sp = params
+    const s = sp.get("search") || ""
+    const p = sp.get("platform") || "all"
+    const min = sp.get("minPrice")
+    const max = sp.get("maxPrice")
+    const sort = sp.get("sort") || "newest"
+    setSearchText(s)
+    setSelectedPlatform(p)
+    if (min && max) {
+      const a = Number(min)
+      const b = Number(max)
+      if (!Number.isNaN(a) && !Number.isNaN(b)) setPriceRange([a, b])
+    }
+    setSortBy(sort)
+    // only run on first mount
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   const [items, setItems] = useState<any[]>([])
   const [total, setTotal] = useState(0)
@@ -26,7 +49,7 @@ export default function MarketplacePage() {
   const query = useMemo(() => {
     const params = new URLSearchParams()
     if (searchText) params.set("search", searchText)
-    if (selectedPlatform) params.set("platform", selectedPlatform)
+    if (selectedPlatform && selectedPlatform !== "all") params.set("platform", selectedPlatform)
     if (priceRange?.length === 2) {
       params.set("minPrice", String(priceRange[0]))
       params.set("maxPrice", String(priceRange[1]))
@@ -60,6 +83,20 @@ export default function MarketplacePage() {
       clearTimeout(t)
     }
   }, [query])
+
+  // Sync state back to URL (shallow)
+  useEffect(() => {
+    const qs = new URLSearchParams()
+    if (searchText) qs.set("search", searchText)
+    if (selectedPlatform && selectedPlatform !== "all") qs.set("platform", selectedPlatform)
+    if (priceRange?.length === 2) {
+      qs.set("minPrice", String(priceRange[0]))
+      qs.set("maxPrice", String(priceRange[1]))
+    }
+    if (sortBy) qs.set("sort", sortBy)
+    const q = qs.toString()
+    router.push(`/marketplace${q ? `?${q}` : ""}`)
+  }, [searchText, selectedPlatform, priceRange, sortBy, router])
 
   const platformIcons = {
     YouTube: "🎥",
