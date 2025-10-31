@@ -13,6 +13,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Search, Filter, Heart, Eye, Users, TrendingUp, Star, Shield, AlertTriangle } from "lucide-react"
 
 export default function MarketplacePage() {
+  const API_BASE = process.env.NEXT_PUBLIC_API_BASE ?? "http://localhost:4000/v1"
   const [priceRange, setPriceRange] = useState([0, 10000])
   const [selectedPlatform, setSelectedPlatform] = useState("all")
   const [sortBy, setSortBy] = useState("newest")
@@ -65,7 +66,7 @@ export default function MarketplacePage() {
     setLoading(true)
     setError(null)
     const t = setTimeout(() => {
-      fetch(`/api/channels?${query}`)
+      fetch(`${API_BASE}/channels?${query}`)
         .then(async (r) => {
           if (!r.ok) throw new Error((await r.json())?.detail || "Failed to load")
           return r.json()
